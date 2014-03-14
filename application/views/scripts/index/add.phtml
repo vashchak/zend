@@ -1,4 +1,8 @@
-<br /><br />
-<div id="view-content">
-	<p>V   iew script for controller <b>Index</b> and script/action name <b>add</b></p>
-</div>
+<?php
+// Создаём заголовок страницы, который загрузится в layout
+$this->title = "Редагування фільму";
+$this->headTitle($this->title);
+    
+    // Создаём patrialLoop, передав массив фильмов, полученных от контроллера
+    echo $this->form;
+?>

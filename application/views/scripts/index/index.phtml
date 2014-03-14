@@ -27,17 +27,20 @@
         height: 100%;
     }
 </style>
-<div id="welcome">
-    <h1>Welcome to the <span id="zf-name">Zend Framework!</span></h1>
-
-    <h3>This is your project's main page</h3>
-        
-    <div id="more-information">
-        <p><img src="http://framework.zend.com/images/PoweredBy_ZF_4LightBG.png" /></p>
-        <p>
-            Helpful Links: <br />
-            <a href="http://framework.zend.com/">Zend Framework Website</a> |
-            <a href="http://framework.zend.com/manual/en/">Zend Framework Manual</a>
-        </p>
-    </div>
-</div>
+<?php
+// Создаём заголовок страницы, который загрузится в layout
+$this->title = "Мои любимые фильмы";
+$this->headTitle($this->title);
+?>
+<p><a href="<?php echo $this->url(array('controller'=>'index','action'=>'add'));?>">Добавить новый фильм</a></p>
+<table>
+    <tr>
+        <th>Название</th>
+        <th>Режиссёр</th>
+        <th>&nbsp;</th>
+    </tr>
+    <?php
+        // Создаём patrialLoop, передав массив фильмов, полученных от контроллера
+        echo $this->partialLoop('partials/movie.phtml', $this->movies);
+    ?>
+</table>
