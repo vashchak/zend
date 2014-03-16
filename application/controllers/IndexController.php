@@ -11,12 +11,12 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        $this->view->jQuery()->addStylesheet("http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css");
-        $this->view->jQuery()->addStylesheet("http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css"); 
+       // $this->view->jQuery()->addStylesheet("http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css");
+       // $this->view->jQuery()->addStylesheet("http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css"); 
         
-        $jqform = new Application_Form_JQueryForm();
-        $jqform ->submit -> setLabel('JQuery');
-        $this-> viev-> form = $jqform;
+        
+        $form = new Application_Form_JQueryForm;
+        $this-> viev-> form = $form;
         // Создаём объект нашей модели
         $movies = new Application_Model_DbTable_Movies(); 
         //* Применяем метод fetchAll для выборки всех записей из таблицы,
