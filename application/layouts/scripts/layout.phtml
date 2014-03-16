@@ -24,7 +24,9 @@
         // Прикрепляем таблицу стилей
         echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/site.css');
         
-        echo $this -> jQuery();
+        echo $this -> jQuery()
+                ->enable()
+                ->uienable();
     ?>
 </head>
 <body>

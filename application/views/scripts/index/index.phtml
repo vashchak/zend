@@ -43,21 +43,7 @@ $this->headTitle($this->title);
     <?php
         // Создаём patrialLoop, передав массив фильмов, полученных от контроллера
         echo $this->partialLoop('partials/movie.phtml', $this->movies);
+        echo $this->form;
     ?>
     
 </table>
-
-<?php echo $this->ajaxLink("Show me something",
-                    "/index/add",
-                    array('update' => '#content'));?>
- 
-<div id="content"></div>
- 
-<form method="post" action="/index/add">
-Pick your Date: <?php echo $this->datePicker("dp1",
-                                             '',
-                                             array(
-                                                'defaultDate' =>
-                                                    date('Y/m/d', time())));?>
-<input type="submit" value="Submit" />
-</form>
