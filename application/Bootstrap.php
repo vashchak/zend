@@ -67,7 +67,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	$viewRenderer->setView($view);
 	Zend_Controller_Action_HelperBroker::addHelper($viewRenderer);
         
-        $front = Zend_Controller_Front::getInstance();
+        //$front = Zend_Controller_Front::getInstance();
         //$front->setParam('noViewRenderer', true);
     }
 }

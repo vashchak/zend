@@ -5,18 +5,15 @@ class IndexController extends Zend_Controller_Action
 
     public function init()
     {
-        
         /* Initialize action controller here */
     }
 
     public function indexAction()
     {
        // $this->view->jQuery()->addStylesheet("http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css");
-       // $this->view->jQuery()->addStylesheet("http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css"); 
-        
-        
-        $form = new Application_Form_JQueryForm;
-        $this-> viev-> form = $form;
+       // $this->view->jQuery()->addStylesheet("http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css");  
+        //$form = new Application_Form_JQueryForm;
+       // $this-> viev-> form = $form;
         // Создаём объект нашей модели
         $movies = new Application_Model_DbTable_Movies(); 
         //* Применяем метод fetchAll для выборки всех записей из таблицы,
@@ -152,6 +149,20 @@ class IndexController extends Zend_Controller_Action
         }
     }
 
+    public function aboutAction()
+    {
+        $message = $this->_getParam('m');
+      
+        if ($message) {
+            $this->view->message = $message;
+        } else {
+            $this->view->message = "no message";
+        }
+        // action body
+    }
+
 
 }
+
+
 
